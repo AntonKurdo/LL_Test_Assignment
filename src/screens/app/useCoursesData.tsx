@@ -1,14 +1,15 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 import { Course, Tag } from "../../shared/models/course";
 import { parseDataToCategories, sortCoursesByName } from "../../shared/helpers";
 import useLoading from "../../hooks/useLoading";
 import { fetchData } from "../../services/fetchData";
 
-export const useCoarsesData = (activeCategory: string) => {
+export const useCoarsesData = () => {
   const fetchedData = useRef<Course[]>([]);
   const allCategories = useRef<Tag[]>([]);
   const [data, setData] = useState<Course[]>([]);
+  const [activeCategory, setActiveCategory] = useState("");
 
   const [getCourses, loading] = useLoading(_getCourses);
 
@@ -42,5 +43,14 @@ export const useCoarsesData = (activeCategory: string) => {
     }
   }
 
-  return [allCategories.current, data, loading] as [Tag[], Course[], boolean];
+  const onCategoryChanged = useCallback((c: Tag) => {
+    setActiveCategory(c);
+  }, []);
+
+  return {
+    allCategories: allCategories.current,
+    data,
+    loading,
+    onCategoryChanged,
+  };
 };

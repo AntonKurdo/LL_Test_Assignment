@@ -1,0 +1,18 @@
+%fontShared {
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.1px;
+  font-size: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  @extend %fontShared;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

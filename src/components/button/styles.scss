@@ -1,0 +1,32 @@
+$mainGreen: #5fbf77;
+$border: #cfcfe4;
+$whiteLabel: white;
+$darkLabel: #39414b;
+
+%containerShared {
+  width: "100%";
+  border-color: $border;
+  padding: 12px;
+  border-radius: 18px;
+}
+
+%labelShared {
+  font-weight: 800;
+}
+
+.containerActive {
+  @extend %containerShared;
+  @extend %labelShared;
+  background-color: $mainGreen;
+  color: $whiteLabel;
+}
+
+.containerNonActive {
+  @extend %containerShared;
+  @extend %labelShared;
+  background-color: white;
+  color: $darkLabel;
+}
+.containerNonActive:hover {
+  background-color: lighten($color: $mainGreen, $amount: 32);
+}

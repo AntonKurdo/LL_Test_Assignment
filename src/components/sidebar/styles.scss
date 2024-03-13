@@ -1,0 +1,14 @@
+$white: white;
+$black: black;
+$border: #cfcfe4;
+
+.container {
+  width: 311px;
+  height: 100%;
+  background-color: $white;
+  border-color: $border;
+  padding: 12px;
+  border-radius: 18px;
+  border-width: 1px;
+  border-style: solid;
+}

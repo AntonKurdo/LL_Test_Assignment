@@ -1,0 +1,39 @@
+$white: white;
+$black: black;
+$border: #cfcfe4;
+$gap: 18px;
+$numberOfColumns: 3;
+$numberOfGaps: $numberOfColumns - 1;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-width: 177px;
+  height: min-content;
+  width: calc((100% - $gap * $numberOfGaps) / $numberOfColumns);
+  background-color: $white;
+  box-shadow: 0px 10px 13px rgba(35, 35, 95, 0.18);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.wrapper:hover {
+  transform: scale(1.0123);
+  transition: transform 0.314s;
+}
+
+.img_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.img {
+  width: 144px;
+}
+
+.label_wrapper {
+  display: flex;
+  padding: 12px 18px 18px 18px;
+  align-items: center;
+}
